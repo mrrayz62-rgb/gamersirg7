@@ -1,0 +1,85 @@
+/* GameSir G7 SE – édition NOIR / VIOLET / CYAN
+   Coque : #1b1b27 | Contours : #a855f7 | Secondaire : #22d3ee
+   Skin CSS autonome pour gamepadviewer.com/?p=1&css=URL
+   Palette modifiable : remplacer #a855f7 (violet) et #22d3ee (cyan).
+   Skin inspiré de la G7 SE, non officiel ; approximation CSS sans images externes. */
+.controller.custom {
+  position: relative;
+  width: 784px;
+  height: 558px;
+  background:
+    radial-gradient(ellipse at 50% 25%, #454154 0 13%, transparent 41%),
+    linear-gradient(155deg, #3c344b 0%, #1b1b27 46%, #0b0c13 100%);
+  border-radius: 39% 39% 31% 31% / 32% 32% 49% 49%;
+  box-shadow: inset 0 0 0 8px #11131d, inset 0 0 0 13px #a855f7,
+              inset 0 -22px 28px #080811, 0 0 26px #a855f755;
+  overflow: visible;
+  font-family: Arial, sans-serif;
+}
+/* Plaque centrale + inscription GameSir */
+.controller.custom::before {
+  content: '';
+  position: absolute;
+  top: 110px; left: 258px; width: 268px; height: 195px;
+  border-radius: 35% 35% 43% 43%;
+  background: linear-gradient(150deg, #313241, #15161f);
+  box-shadow: inset 0 0 0 2px #565064, 0 3px 15px #08081088;
+  pointer-events: none;
+}
+.controller.custom::after {
+  content: 'GameSir  G7 SE';
+  position: absolute;
+  left: 298px; top: 159px; width: 190px;
+  color: #ddd4ef;
+  text-align: center; font-weight: 800;
+  font-size: 20px; letter-spacing: 1px;
+  text-shadow: 0 0 9px #a855f766;
+  pointer-events: none;
+}
+.custom.disconnected { filter: grayscale(.65); opacity: .65; }
+.custom.disconnected div { display: none; }
+.custom .quadrant { position:absolute; top: 123px; left: 367px; width: 50px; height: 34px; background: #181923; border: 3px solid #a855f7; border-radius: 50%; box-shadow: 0 0 9px #a855f766; }
+.custom .quadrant.p0, .custom .quadrant.p1, .custom .quadrant.p2, .custom .quadrant.p3 { background-image: none; }
+/* Gâchettes */
+.custom .triggers { position:absolute; width: 612px; height: 67px; top: 7px; left: 86px; }
+.custom .trigger { height: 67px; width: 113px; opacity: .42; border-radius: 45% 45% 15% 15%; background: linear-gradient(#a855f7, #4e2181); }
+.custom .trigger.left { float: left; }
+.custom .trigger.right { float: right; }
+.custom .trigger.pressed { opacity:1; box-shadow: 0 0 17px #a855f7; }
+.custom .bumpers { position:absolute; top: 67px; left: 79px; width: 626px; height: 34px; }
+.custom .bumper { width: 125px; height: 34px; border-radius: 45% 45% 20% 20%; background: #22d3ee; opacity: .3; }
+.custom .bumper.left { float:left; }
+.custom .bumper.right { float:right; }
+.custom .bumper.pressed { opacity:1; box-shadow:0 0 14px #22d3ee; }
+/* Boutons menu */
+.custom .arrows { position:absolute; top: 235px; left: 311px; width: 162px; height: 30px; }
+.custom .back, .custom .start { width:29px; height:21px; border:2px solid #9da0ae; border-radius: 10px; background:#2e303c; box-sizing: border-box; }
+.custom .back {float:left;}
+.custom .start {float:right;}
+.custom .back.pressed, .custom .start.pressed { background:#a855f7; box-shadow:0 0 12px #a855f7; }
+/* Boutons ABXY dans une implantation Xbox / G7 SE */
+.custom .abxy { position:absolute; left: 545px; top: 155px; width: 184px; height: 185px; }
+.custom .button { position:absolute; height: 49px; width: 49px; border-radius: 50%; background:#10131b; border:4px solid #333648; box-sizing:border-box; color:#eee; box-shadow: inset 0 -5px 5px #07080e, 0 3px 5px #0c0b15; }
+.custom .button::after { display:block; position:absolute; inset:0; line-height:41px; text-align:center; font:bold 23px/41px Arial,sans-serif; }
+.custom .a { top:125px; left:69px; } .custom .a::after {content:'A'; color:#22d3ee;}
+.custom .b { top:65px; right:0; } .custom .b::after {content:'B'; color:#fa6f9a;}
+.custom .x { top:65px; left:0; } .custom .x::after {content:'X'; color:#79b8ff;}
+.custom .y { top:5px; left:69px; } .custom .y::after {content:'Y'; color:#f9d56c;}
+.custom .button.pressed { background:#a855f7; border-color:#e2c3ff; box-shadow:0 0 19px #a855f7; transform:scale(.94); }
+.custom .button.pressed::after { color:#fff; }
+/* Joysticks : le mouvement est géré nativement par Gamepad Viewer */
+.custom .sticks { position:absolute; top: 183px; left: 130px; width: 427px; height: 209px; }
+.custom .stick { position:absolute; width: 104px; height:104px; box-sizing:border-box; border-radius:50%; background:radial-gradient(circle at 39% 34%, #454356, #191c27 65%); border: 11px solid #a855f7; box-shadow:inset 0 0 0 4px #161823, 0 0 0 5px #0f111b, 0 0 12px #a855f788; }
+.custom .stick.left {left:0; top:0;}
+.custom .stick.right {right:0; bottom:0;}
+.custom .stick.pressed { border-color:#22d3ee; box-shadow:inset 0 0 0 4px #161823, 0 0 0 5px #0f111b, 0 0 18px #22d3ee; }
+/* Croix directionnelle */
+.custom .dpad {position:absolute; left: 159px; top: 340px; width: 132px; height: 132px;}
+.custom .face {position:absolute; box-sizing:border-box; background:#292c38; border:2px solid #464959;}
+.custom .face.up {top:0; left:46px; width:40px; height:68px; border-radius:9px 9px 0 0;}
+.custom .face.down {bottom:0; left:46px; width:40px; height:68px; border-radius:0 0 9px 9px;}
+.custom .face.left {left:0; top:46px; width:68px; height:40px; border-radius:9px 0 0 9px;}
+.custom .face.right {right:0; top:46px; width:68px; height:40px; border-radius:0 9px 9px 0;}
+.custom .face.pressed {background:#a855f7; border-color:#e4d0ff; box-shadow:0 0 14px #a855f7; z-index:2;}
+/* Certains thèmes exposent aussi les boutons numériques de gâchettes */
+.custom .trigger-button {display:none;}
